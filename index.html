@@ -1,19 +1,457 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Ooty Cabz Taxi Service</title>
-<link rel="stylesheet" href="style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ooty Cabz Taxi Service | Ooty Taxi Booking & Sightseeing</title>
+
+  <meta name="description" content="Ooty Cabz Taxi Service offers Ooty sightseeing, Coonoor, Pykara, Mudumalai, Avalanche tours and Coimbatore Airport transfers. Call or WhatsApp for taxi booking.">
+
+  <meta name="keywords" content="Ooty taxi service, Ooty cab service, Ooty taxi booking, Ooty sightseeing taxi, Coonoor sightseeing taxi, Pykara taxi, Mudumalai taxi, Coimbatore airport taxi">
+
+  <meta name="author" content="Ooty Cabz Taxi Service">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f7faf8;
+    }
+
+    header {
+      background: linear-gradient(135deg, #064e3b, #0f766e);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    header h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+
+    .call {
+      background: #2563eb;
+    }
+
+    .whatsapp {
+      background: #16a34a;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #064e3b;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .section-text {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 30px;
+      color: #555;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .service {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .service h3 {
+      color: #047857;
+      margin-bottom: 8px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .place {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .place img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .place-content {
+      padding: 15px;
+    }
+
+    .place h3 {
+      color: #064e3b;
+      margin-bottom: 5px;
+    }
+
+    .booking {
+      background: #064e3b;
+      color: white;
+      text-align: center;
+      border-radius: 20px;
+      padding: 40px 20px;
+    }
+
+    .booking h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .booking p {
+      margin-bottom: 20px;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .contact {
+      background: white;
+      color: #222;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .contact strong {
+      color: #064e3b;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      background: #022c22;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 27px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 35px 15px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .place img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
 <body>
-<header><h1>Ooty Cabz Taxi Service</h1>
-<p>Trusted Taxi Service in Ooty</p></header>
-<section>
-<h2>Our Services</h2>
-<ul>
-<li>Ooty Sightseeing</li>
-<li>Coonoor Sightseeing</li>
-<li>Pykara Tour</li>
-<li>Mudumalai Safari</li>
-<li>Coimbatore Airport Transfer</li>
-</ul>
-<p><strong>Call/WhatsApp:</strong> +91 96508 47369</p>
-</section>
-<script src="script.js"></script>
-</body></html> 
+
+  <header>
+    <h1>Ooty Cabz Taxi Service</h1>
+    <p>Trusted Taxi Service in Ooty & Nilgiris</p>
+    <p>Ooty Sightseeing • Coonoor • Pykara • Mudumalai • Airport Transfers</p>
+
+    <div class="buttons">
+      <a class="btn call" href="tel:+919650847369">📞 Call Now</a>
+      <a class="btn whatsapp" href="https://wa.me/919650847369?text=Hello%20Ooty%20Cabz%2C%20I%20need%20a%20taxi%20booking." target="_blank">💬 WhatsApp</a>
+    </div>
+  </header>
+
+
+  <section>
+    <h2 class="section-title">Ooty Taxi & Sightseeing Services</h2>
+
+    <p class="section-text">
+      Explore Ooty and the beautiful Nilgiris with Ooty Cabz Taxi Service.
+      We provide comfortable taxi services for sightseeing, airport transfers,
+      family trips and outstation travel.
+    </p>
+
+    <div class="services">
+
+      <div class="service">
+        <h3>🚕 Ooty Sightseeing</h3>
+        <p>Explore the famous attractions of Ooty with a comfortable private taxi.</p>
+      </div>
+
+      <div class="service">
+        <h3>🌿 Coonoor Sightseeing</h3>
+        <p>Visit Coonoor viewpoints, tea gardens and beautiful Nilgiri attractions.</p>
+      </div>
+
+      <div class="service">
+        <h3>💦 Pykara Tour</h3>
+        <p>Enjoy Pykara Lake, Pykara Waterfalls, Pine Forest and Wenlock Downs.</p>
+      </div>
+
+      <div class="service">
+        <h3>🐘 Mudumalai Safari</h3>
+        <p>Travel from Ooty to Mudumalai and explore the wildlife region of the Nilgiris.</p>
+      </div>
+
+      <div class="service">
+        <h3>🏔️ Avalanche Tour</h3>
+        <p>Enjoy the scenic Avalanche Lake and beautiful mountain roads.</p>
+      </div>
+
+      <div class="service">
+        <h3>✈️ Airport Transfer</h3>
+        <p>Taxi service for Coimbatore Airport pickup and drop from Ooty.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section>
+    <h2 class="section-title">Popular Ooty & Nilgiris Places</h2>
+
+    <p class="section-text">
+      Visit some of the most popular tourist attractions with Ooty Cabz.
+    </p>
+
+    <div class="gallery">
+
+      <div class="place">
+        <img src="doddabetta-peak.jpg" alt="Doddabetta Peak Ooty">
+        <div class="place-content">
+          <h3>Doddabetta Peak</h3>
+          <p>Enjoy panoramic mountain views from the highest peak in the Nilgiris.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="botanical-garden.jpg" alt="Government Botanical Garden Ooty">
+        <div class="place-content">
+          <h3>Botanical Garden</h3>
+          <p>A beautiful garden and one of Ooty's popular tourist attractions.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="ooty-lake-boat-house.jpg" alt="Ooty Lake Boat House">
+        <div class="place-content">
+          <h3>Ooty Lake</h3>
+          <p>Enjoy boating and relaxing views at the famous Ooty Lake.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="rose-garden.jpg" alt="Ooty Rose Garden">
+        <div class="place-content">
+          <h3>Rose Garden</h3>
+          <p>See beautiful varieties of roses at the famous Ooty Rose Garden.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="pykara-lake.jpg" alt="Pykara Lake Ooty">
+        <div class="place-content">
+          <h3>Pykara Lake</h3>
+          <p>A scenic lake surrounded by the beautiful Nilgiri hills.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="pykara-waterfalls.jpg" alt="Pykara Waterfalls Ooty">
+        <div class="place-content">
+          <h3>Pykara Waterfalls</h3>
+          <p>Visit the beautiful Pykara Waterfalls during your Ooty trip.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="pine-forest.jpg" alt="Pine Forest Ooty">
+        <div class="place-content">
+          <h3>Pine Forest</h3>
+          <p>A peaceful and scenic forest location near Ooty and Pykara.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="wenlock-downs.jpg" alt="Wenlock Downs Ooty">
+        <div class="place-content">
+          <h3>Wenlock Downs</h3>
+          <p>Beautiful green grasslands and mountain scenery near Pykara.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="coonoor-view-point.jpg" alt="Coonoor View Point">
+        <div class="place-content">
+          <h3>Coonoor</h3>
+          <p>Explore the beautiful viewpoints and tea gardens of Coonoor.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="nilgiri-toy-train.jpg" alt="Nilgiri Mountain Railway Toy Train">
+        <div class="place-content">
+          <h3>Nilgiri Toy Train</h3>
+          <p>Experience the famous Nilgiri Mountain Railway through the hills.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="mudumalai-wildlife-sanctuary.jpg" alt="Mudumalai Wildlife Sanctuary">
+        <div class="place-content">
+          <h3>Mudumalai Wildlife Sanctuary</h3>
+          <p>Explore the wildlife and forests of the Mudumalai region.</p>
+        </div>
+      </div>
+
+      <div class="place">
+        <img src="avalanche-lake-road.jpg" alt="Avalanche Lake Road Ooty">
+        <div class="place-content">
+          <h3>Avalanche Lake</h3>
+          <p>Enjoy the peaceful mountain scenery and beautiful roads around Avalanche.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section>
+    <div class="booking">
+
+      <h2>Book Your Ooty Taxi</h2>
+
+      <p>
+        Planning an Ooty trip? Contact Ooty Cabz Taxi Service for sightseeing,
+        transfers and travel assistance.
+      </p>
+
+      <div class="buttons">
+        <a class="btn call" href="tel:+919650847369">📞 +91 96508 47369</a>
+
+        <a class="btn whatsapp"
+           href="https://wa.me/919650847369?text=Hello%20Ooty%20Cabz%2C%20I%20would%20like%20to%20book%20a%20taxi."
+           target="_blank">
+          💬 WhatsApp Booking
+        </a>
+      </div>
+
+      <div class="contact-box">
+
+        <div class="contact">
+          <strong>Primary Phone / WhatsApp</strong>
+          +91 96508 47369
+        </div>
+
+        <div class="contact">
+          <strong>Second Contact</strong>
+          +91 63798 27467
+        </div>
+
+        <div class="contact">
+          <strong>Location</strong>
+          Ooty Main Bus Stand, Kathadimattam, Ooty, The Nilgiris, Tamil Nadu
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section>
+    <h2 class="section-title">Why Choose Ooty Cabz?</h2>
+
+    <div class="services">
+
+      <div class="service">
+        <h3>✅ Local Knowledge</h3>
+        <p>Get practical travel guidance for Ooty and nearby Nilgiris attractions.</p>
+      </div>
+
+      <div class="service">
+        <h3>🚕 Comfortable Travel</h3>
+        <p>Private taxi service for families, couples and groups.</p>
+      </div>
+
+      <div class="service">
+        <h3>📍 Sightseeing Assistance</h3>
+        <p>Plan your sightseeing route efficiently and enjoy more places during your trip.</p>
+      </div>
+
+      <div class="service">
+        <h3>📱 Easy Booking</h3>
+        <p>Call or WhatsApp us directly to discuss your travel requirements.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer>
+    <p><strong>Ooty Cabz Taxi Service</strong></p>
+    <p>Ooty Taxi Service • Ooty Sightseeing • Coonoor • Pykara • Mudumalai</p>
+    <p>📞 +91 96508 47369 | +91 63798 27467</p>
+    <p>© 2026 Ooty Cabz Taxi Service. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
