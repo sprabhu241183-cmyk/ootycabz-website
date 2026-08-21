@@ -1,0 +1,39 @@
+name: Add Google Reviews Section
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Replace homepage review section
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          html = p.read_text(encoding='utf-8')
+          start = html.find('<section class="section" id="reviews">')
+          end = html.find('<section class="section">', start + 10)
+          if start == -1 or end == -1:
+              raise SystemExit('Review section boundaries not found')
+          new_section = '''<section class="section" id="reviews"><div class="wrap"><div class="head"><div class="label">Google reviews</div><h2 class="title">What Our Customers Say</h2><p class="sub">Real customer feedback helps travellers choose a reliable Ooty taxi service.</p></div><div class="reviewgrid"><div class="review"><div class="stars">★★★★★</div><h3>Best cab service</h3><p>“Best cab service and good behaviour. Best price.”</p><small>Google review highlight</small></div><div class="review"><div class="stars">★★★★★</div><h3>Friendly driver</h3><p>“I had a great travel experience. The driver was very friendly.”</p><small>Google review highlight</small></div><div class="review"><div class="stars">★★★★★</div><h3>Enjoyed the service</h3><p>“Overall we enjoyed the company.”</p><small>Google review highlight</small></div></div><div style="text-align:center;margin-top:24px"><a class="btn gold" href="https://www.google.com/maps/search/?api=1&query=Ooty%20Cabz%20Taxi%20Service%2C%20Ooty%2C%20Tamil%20Nadu" target="_blank" rel="noopener">⭐ View All Google Reviews</a></div></div></section>
+'''
+          html = html[:start] + new_section + html[end:]
+          p.write_text(html, encoding='utf-8')
+          PY
+
+      - name: Commit homepage change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Add Google review highlights to homepage"
+          git push
