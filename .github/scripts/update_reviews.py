@@ -1,0 +1,16 @@
+from pathlib import Path
+import re
+
+path = Path("index.html")
+html = path.read_text(encoding="utf-8")
+
+new_section = '''<section class="section" id="reviews"><div class="wrap"><div class="head"><div class="label">Google reviews</div><h2 class="title">What Our Customers Say</h2><p class="sub">Real 5-star Google reviews from travellers who chose Ooty Cabz Taxi Service.</p></div><div class="reviewgrid"><div class="review"><div class="stars">★★★★★</div><h3>Dimple Vasvani</h3><p>“Mr Prabhu is an exceptional driver who drives very patiently in the valley and explained in details. I wanted to travel through toy train.. and he made sure that I did.. very nice person.”</p><small>Google review • 3 weeks ago</small></div><div class="review"><div class="stars">★★★★★</div><h3>Ruban Ranjous</h3><p>“We had an excellent experience with Ooty Cabz Taxi Service. Mr. Prabhu was very professional, punctual, and friendly throughout our trip. The car was clean and comfortable, and the driving was safe on the Ooty hill roads.”</p><small>Google review • 1 month ago</small></div><div class="review"><div class="stars">★★★★★</div><h3>Anand Lakhmani</h3><p>“Our experience with Mr. Prabhu was excellent. He is extremely polite, always smiling, and very well-versed with all the local attractions and hidden gems around Ooty.”</p><small>Google review • 2 months ago</small></div><div class="review"><div class="stars">★★★★★</div><h3>Neeta Singh</h3><p>“Very good service, decent behaviour, very good Hindi spoken, punctual in time.”</p><small>Google review • New</small></div></div><div style="text-align:center;margin-top:24px"><a class="btn gold" href="https://maps.app.goo.gl/CPDzhmiV6NYrobVJ7" target="_blank" rel="noopener">⭐ View All Google Reviews</a></div></div></section>'''
+
+pattern = r'<section class="section" id="reviews">.*?</section>'
+updated, count = re.subn(pattern, new_section, html, count=1, flags=re.DOTALL)
+
+if count != 1:
+    raise SystemExit("Could not find the homepage review section")
+
+path.write_text(updated, encoding="utf-8")
+print("Google reviews section replaced successfully")
