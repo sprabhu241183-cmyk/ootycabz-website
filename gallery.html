@@ -1,1 +1,72 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ooty Cabz Photos | Ooty Taxi Service</title><meta name="description" content="Ooty and Nilgiris sightseeing photos from Ooty Cabz."><style>body{font-family:Arial;margin:0;background:#f7faf8;color:#1f2937}header{background:#064e3b;color:white;text-align:center;padding:35px 15px}main{max-width:1000px;margin:auto;padding:25px 15px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}figure{margin:0;background:white;padding:10px;border-radius:14px}img{width:100%;height:320px;object-fit:cover;border-radius:10px}figcaption{font-weight:bold;padding:10px 2px;color:#064e3b}a{color:white;background:#16a34a;padding:10px 16px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:10px}footer{background:#022c22;color:white;text-align:center;padding:22px;margin-top:25px}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style></head><body><header><h1>Ooty Cabz – Ooty & Nilgiris Photos</h1><p>Beautiful Ooty and Nilgiris sightseeing views.</p><a href="https://ootycabz.com/">Back to Ooty Cabz</a></header><main><div class="grid"><figure><img src="/doddabetta-peak.jpg" alt="Doddabetta Peak Ooty" loading="lazy"><figcaption>Doddabetta Peak – Ooty</figcaption></figure><figure><img src="/botanical-garden.jpg" alt="Ooty Botanical Garden" loading="lazy"><figcaption>Ooty Botanical Garden</figcaption></figure><figure><img src="/ooty-lake-boat-house.jpg" alt="Ooty Lake Boat House" loading="lazy"><figcaption>Ooty Lake & Boat House</figcaption></figure><figure><img src="/pykara-lake.jpg" alt="Pykara Lake Nilgiris" loading="lazy"><figcaption>Pykara Lake – Nilgiris</figcaption></figure><figure><img src="/coonoor-view-point.jpg" alt="Coonoor viewpoint Nilgiris" loading="lazy"><figcaption>Coonoor View Point</figcaption></figure><figure><img src="/avalanche-lake-road.jpg" alt="Avalanche Lake Road Ooty" loading="lazy"><figcaption>Avalanche – Ooty</figcaption></figure></div><p>Book Ooty local sightseeing, Coonoor, Pykara, Mudumalai, Avalanche and airport/railway transfers with Ooty Cabz.</p></main><footer>© 2026 Ooty Cabz Taxi Service • Ooty, The Nilgiris</footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ooty Cabz Photos & Videos | Ooty Taxi Service</title>
+<meta name="description" content="Latest Ooty Cabz Taxi Service photos and Google Business Profile media from Ooty and the Nilgiris.">
+<style>
+body{font-family:Arial;margin:0;background:#f7faf8;color:#1f2937}
+header{background:#064e3b;color:white;text-align:center;padding:35px 15px}
+main{max-width:1100px;margin:auto;padding:25px 15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+figure{margin:0;background:white;padding:10px;border-radius:14px;box-shadow:0 6px 20px #00000012}
+.media{position:relative;overflow:hidden;border-radius:10px;background:#e8eee9}
+.media img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.video-badge{position:absolute;left:12px;bottom:12px;background:#064e3b;color:#fff;padding:7px 11px;border-radius:999px;font-weight:800;font-size:12px}
+figcaption{font-weight:bold;padding:12px 2px 5px;color:#064e3b}
+.meta{font-size:12px;color:#6b7280;padding:0 2px 8px}
+.status{background:#fff;border:1px solid #dfe8e2;border-radius:12px;padding:14px;margin-bottom:20px;color:#4b5563}
+.status strong{color:#064e3b}
+a{color:white;background:#16a34a;padding:10px 16px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:10px}
+.note{margin-top:22px;background:#fff;border:1px solid #dfe8e2;border-radius:12px;padding:15px;color:#5b6470;font-size:13px}
+footer{background:#022c22;color:white;text-align:center;padding:22px;margin-top:25px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<h1>Ooty Cabz – Latest Photos & Videos</h1>
+<p>Latest media from our Google Business Profile and Ooty taxi service.</p>
+<a href="/">Back to Ooty Cabz</a>
+</header>
+<main>
+<div id="status" class="status"><strong>Loading latest Google Business Profile media…</strong></div>
+<div id="mediaGrid" class="grid"></div>
+<div class="note"><strong>How this works:</strong> Add new photos to your Ooty Cabz Google Business Profile and this website gallery will refresh the available media automatically. Google provides a preview image for Business Profile videos, so video items are shown as video preview cards rather than hosted as playable video files on this website.</div>
+</main>
+<footer>© 2026 Ooty Cabz Taxi Service • Ooty, The Nilgiris</footer>
+<script>
+(async function(){
+  const status=document.getElementById("status");
+  const grid=document.getElementById("mediaGrid");
+  try{
+    const res=await fetch("/api/google-media",{headers:{accept:"application/json"}});
+    const data=await res.json();
+    if(!data.ok){
+      status.innerHTML="<strong>Google Business Profile media is not connected yet.</strong> The website is ready; the Google OAuth details still need to be added securely in Cloudflare.";
+      return;
+    }
+    const items=(data.items||[]).filter(x=>x.imageUrl);
+    if(!items.length){
+      status.innerHTML="<strong>No Google Business Profile media was returned.</strong> Add photos/videos to your profile and refresh this page.";
+      return;
+    }
+    status.innerHTML="<strong>Latest Google Business Profile media</strong> • Updated automatically";
+    grid.innerHTML=items.map((item)=>{
+      const isVideo=item.mediaFormat==="VIDEO";
+      const title=item.description || (isVideo ? "Ooty Cabz Video" : "Ooty Cabz Photo");
+      const date=item.createTime ? new Date(item.createTime).toLocaleDateString("en-IN") : "";
+      const source=item.googleUrl ? '<a href="'+item.googleUrl+'" target="_blank" rel="noopener" style="background:none;color:#064e3b;padding:0;margin:0;font-weight:800">View on Google</a>' : "";
+      return '<figure><div class="media"><img src="'+escapeHtml(item.imageUrl)+'" alt="'+escapeHtml(title)+'" loading="lazy">'+(isVideo?'<span class="video-badge">▶ Video on Google</span>':'')+'</div><figcaption>'+escapeHtml(title)+'</figcaption><div class="meta">'+escapeHtml(date)+' '+source+'</div></figure>';
+    }).join("");
+  }catch(e){
+    status.innerHTML="<strong>Media could not be loaded right now.</strong> Please try again later.";
+  }
+})();
+function escapeHtml(value){
+  return String(value||"").replace(/[&<>"']/g,(c)=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+}
+</script>
+</body>
+</html>
