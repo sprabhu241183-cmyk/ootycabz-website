@@ -39,7 +39,9 @@
 <div class="card"><div class="icon">🏔️</div><h3>Avalanche Scenic Tour</h3><p>Scenic mountain roads, forests and the Avalanche region, subject to local access and weather.</p><a class="link" href="/avalanche-sightseeing-taxi/">View Avalanche Taxi →</a></div>
 <div class="card"><div class="icon">✈️</div><h3>Airport & Railway Transfers</h3><p>Pre-booked private transfers between Ooty, Coimbatore Airport and Mettupalayam Railway Station.</p><a class="link" href="/coimbatore-airport-to-ooty-taxi/">View Airport Taxi →</a></div>
 </div></div></section>
-<section class="section soft" id="sightseeing-gallery"><div class="wrap"><div class="head"><div class="label">Latest from Google</div><h2 class="title">Ooty Cabz Photos & Videos</h2><p class="sub">See the latest photos and video updates from our Google Business Profile. New media added to Google can appear here automatically.</p></div><div id="gbpMediaGrid" class="gallerygrid"><div class="gallerynote"><strong>Loading latest Google Business Profile media…</strong></div></div><div class="gallerynote"><strong>Video note:</strong> Google Business Profile's media API provides a preview image for videos, so video posts are displayed here as preview cards with a link back to Google rather than as directly hosted video files.</div><p style="text-align:center;margin-top:20px"><a class="btn gold" href="/gallery.html">View All Photos & Videos →</a></p></div></section>
+<section class="section soft" id="sightseeing-gallery"><div class="wrap"><div class="head"><div class="label">Latest from Google</div><h2 class="title">Ooty Cabz Photos & Videos</h2><p class="sub">See the latest photos and video updates from our Google Business Profile. New media added to Google can appear here automatically.</p></div><div id="gbpMediaGrid" class="gallerygrid" aria-live="polite"></div>
+<div class="gallerynote"><strong>📸 Ooty Cabz Photos & Videos</strong> • Our gallery loads instantly. When Google Business Profile media is available, the latest Google photos/videos replace the fallback automatically.</div>
+<div style="text-align:center;margin-top:18px"><a class="btn gold" href="https://wa.me/919650847369?text=Hello%20Ooty%20Cabz%2C%20I%20want%20to%20book%20a%20taxi." target="_blank" rel="noopener">💬 Get Your Ooty Taxi Quote on WhatsApp</a></div><div class="gallerynote"><strong>Video note:</strong> Google Business Profile's media API provides a preview image for videos, so video posts are displayed here as preview cards with a link back to Google rather than as directly hosted video files.</div><p style="text-align:center;margin-top:20px"><a class="btn gold" href="/gallery.html">View All Photos & Videos →</a></p></div></section>
 <section class="section soft" id="fleet"><div class="wrap"><div class="head"><div class="label">Choose your ride</div><h2 class="title">Comfortable Vehicles for Every Trip</h2><p class="sub">Tell us your passenger count and luggage. We will suggest a suitable vehicle.</p></div><div class="fleetgrid">
 <div class="fleet"><div class="fleeticon">🚗</div><h3>Compact Sedan</h3><p>Swift Dzire / Toyota Etios and similar cars.</p><span class="tag">Up to 4 passengers</span><span class="tag">2 luggage bags</span><span class="tag">AC</span><p><a class="link" href="https://wa.me/919650847369?text=Hello%20Ooty%20Cabz%2C%20I%20want%20to%20book%20a%20Sedan." target="_blank" rel="noopener">Book Sedan →</a></p></div>
 <div class="fleet"><div class="fleeticon">🚙</div><h3>Premium SUV / MUV</h3><p>Innova, Ertiga and similar vehicles for family travel.</p><span class="tag">6–7 passengers</span><span class="tag">Extra luggage space</span><span class="tag">Hill travel</span><p><a class="link" href="https://wa.me/919650847369?text=Hello%20Ooty%20Cabz%2C%20I%20want%20an%20SUV%20for%20my%20trip." target="_blank" rel="noopener">Book SUV →</a></p></div>
@@ -73,26 +75,50 @@
 })();
 </script>
 <script>
-(async function(){
+(function(){
   const grid=document.getElementById("gbpMediaGrid");
   if(!grid)return;
-  try{
-    const res=await fetch("/api/google-media",{headers:{accept:"application/json"}});
-    const data=await res.json();
-    if(!data.ok){grid.innerHTML='<div class="gallerynote"><strong>Google Business Profile media is being connected.</strong> The gallery is ready and will start showing your latest Google media after the secure Cloudflare settings are completed.</div>';return;}
-    const items=(data.items||[]).filter(x=>x.imageUrl).slice(0,6);
-    if(!items.length){grid.innerHTML='<div class="gallerynote"><strong>No Google media found yet.</strong> Add photos or videos to the Ooty Cabz Google Business Profile.</div>';return;}
-    grid.innerHTML=items.map((item)=>{
-      const isVideo=item.mediaFormat==="VIDEO";
-      const title=item.description || (isVideo ? "Ooty Cabz Video" : "Ooty Cabz Photo");
-      const date=item.createTime ? new Date(item.createTime).toLocaleDateString("en-IN") : "";
-      const source=item.googleUrl ? '<a href="'+escapeHtml(item.googleUrl)+'" target="_blank" rel="noopener">View on Google</a>' : "";
-      return '<div class="gallerycard"><div style="position:relative"><img src="'+escapeHtml(item.imageUrl)+'" alt="'+escapeHtml(title)+'" loading="lazy">'+(isVideo?'<span style="position:absolute;left:12px;bottom:12px;background:#0D281E;color:#fff;padding:7px 11px;border-radius:999px;font-weight:800;font-size:12px">▶ Video on Google</span>':'')+'</div><div class="gallerybody"><h3>'+escapeHtml(title)+'</h3><p class="credit">'+escapeHtml(date)+' '+source+'</p></div></div>';
-    }).join("");
-  }catch(e){
-    grid.innerHTML='<div class="gallerynote"><strong>Media is temporarily unavailable.</strong> Please refresh later.</div>';
+
+  // Static-first fallback. Keep real Ooty Cabz assets here as they are added to the repo.
+  const staticMedia=[
+    {imageUrl:"/doddabetta-peak.jpg",title:"Doddabetta Peak – Ooty",type:"PHOTO",text:"Explore Ooty with a local taxi service."},
+    {imageUrl:"/doddabetta-peak.jpg",title:"Ooty Cabz Sightseeing",type:"PHOTO",text:"Comfortable private sightseeing around the Nilgiris."},
+    {imageUrl:"/doddabetta-peak.jpg",title:"Ooty Cabz Video Preview",type:"VIDEO",text:"See our latest Ooty Cabz updates on Google."}
+  ];
+
+  function escapeHtml(value){
+    return String(value||"").replace(/[&<>"']/g,(c)=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
   }
+
+  function render(items, source){
+    const cards=items.filter(x=>x.imageUrl).slice(0,6);
+    if(!cards.length)return false;
+    grid.innerHTML=cards.map(item=>{
+      const isVideo=item.type==="VIDEO" || item.mediaFormat==="VIDEO";
+      const title=item.title || item.description || (isVideo ? "Ooty Cabz Video" : "Ooty Cabz Photo");
+      const link=item.googleUrl || "https://maps.app.goo.gl/CPDzhmiV6NYrobVJ7";
+      return '<article class="gallerycard"><div style="position:relative"><img src="'+escapeHtml(item.imageUrl)+'" alt="'+escapeHtml(title)+'" loading="lazy">'+(isVideo?'<span style="position:absolute;left:12px;bottom:12px;background:#0D281E;color:#fff;padding:7px 11px;border-radius:999px;font-weight:800;font-size:12px">▶ Video</span>':'')+'</div><div class="gallerybody"><h3>'+escapeHtml(title)+'</h3><p>'+escapeHtml(item.text || "")+'</p><p class="credit">'+(source==="google"?"Latest Google Business Profile media":"Ooty Cabz gallery")+'</p></div></article>';
+    }).join("");
+    return true;
+  }
+
+  // Render immediately so visitors never see an indefinite loading state.
+  render(staticMedia,"static");
+
+  // Then try Google Business Profile media and replace the fallback only when it succeeds.
+  fetch("/api/google-media",{headers:{accept:"application/json"}})
+    .then(res=>res.ok ? res.json() : Promise.reject(new Error("API unavailable")))
+    .then(data=>{
+      const items=(data.items||[]).filter(x=>x.imageUrl).map(x=>({
+        imageUrl:x.imageUrl,
+        title:x.description || (x.mediaFormat==="VIDEO" ? "Ooty Cabz Video" : "Ooty Cabz Photo"),
+        type:x.mediaFormat,
+        googleUrl:x.googleUrl,
+        text:x.mediaFormat==="VIDEO" ? "Video update from Ooty Cabz." : "Photo update from Ooty Cabz."
+      }));
+      if(data.ok && items.length) render(items,"google");
+    })
+    .catch(()=>{});
 })();
-function escapeHtml(value){return String(value||"").replace(/[&<>"']/g,(c)=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));}
 </script>
 </body></html>
