@@ -72,12 +72,19 @@
  const toggle=document.getElementById('toggleBooking');
  const send=document.getElementById('sendQuote');
  const fields={pickup:document.getElementById('pickup'),destination:document.getElementById('destination'),date:document.getElementById('date'),time:document.getElementById('time'),passengers:document.getElementById('passengers'),vehicle:document.getElementById('vehicle'),luggage:document.getElementById('luggage')};
+ // Prevent selecting a past travel date in the quick booking form.
+ const today=new Date();
+ const localToday=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+ fields.date.min=localToday;
  function openPanel(){panel.classList.add('show');toggle.textContent='Booking Details';panel.scrollIntoView({behavior:'smooth',block:'nearest'});}
  toggle.addEventListener('click',openPanel);
  document.getElementById('mobileBook').addEventListener('click',function(e){e.preventDefault();openPanel();});
  send.addEventListener('click',function(){
    const pickup=fields.pickup.value.trim(),destination=fields.destination.value.trim(),date=fields.date.value,time=fields.time.value,passengers=fields.passengers.value.trim(),vehicle=fields.vehicle.value,luggage=fields.luggage.value.trim();
    if(!pickup||!destination||!date||!time||!passengers){alert('Please enter pickup, destination, date, time and passenger count.');return;}
+   if(date<localToday){alert('Please choose today or a future travel date.');fields.date.focus();return;}
+   const passengerCount=Number(passengers);
+   if(!Number.isInteger(passengerCount)||passengerCount<1){alert('Please enter a valid passenger count (at least 1).');fields.passengers.focus();return;}
    const message='Hello Ooty Cabz, I want a taxi quote.\n\nPickup: '+pickup+'\nDestination / Tour: '+destination+'\nDate: '+date+'\nTime: '+time+'\nPassengers: '+passengers+'\nLuggage: '+(luggage||'Not specified')+'\nVehicle: '+vehicle+'\n\nPlease share the fare and availability.';
    window.open('https://wa.me/919650847369?text='+encodeURIComponent(message),'_blank','noopener');
  });
