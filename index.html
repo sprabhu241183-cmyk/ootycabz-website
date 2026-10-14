@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>
+/* Remove any stray escaped newline text accidentally emitted before the page content. */
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.childNodes.forEach(function (node) {
+    if (node.nodeType === Node.TEXT_NODE && /^(?:\\n|\s)*$/.test(node.nodeValue || "")) {
+      if ((node.nodeValue || "").includes("\\n")) node.remove();
+    }
+  });
+});
+</script>
 <title>Ooty Sightseeing Taxi &amp; Cab Service | Ooty Cabz</title>
 <meta name="description" content="Book a reliable Ooty taxi for sightseeing, Coonoor, Pykara, Mudumalai, Coimbatore Airport and Mettupalayam transfers. Call or WhatsApp Ooty Cabz.">
 <meta name="keywords" content="Ooty taxi service,Ooty cab service,Ooty sightseeing taxi,Coonoor sightseeing taxi,Pykara sightseeing taxi,Mudumalai taxi,Avalanche taxi,Coimbatore Airport to Ooty taxi,Mettupalayam to Ooty taxi,Ooty to Coimbatore taxi,Ooty Tempo Traveller">
