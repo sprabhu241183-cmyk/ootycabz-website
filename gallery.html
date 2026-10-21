@@ -19,7 +19,7 @@ figcaption{font-weight:bold;padding:12px 2px 5px;color:#064e3b}
 .status{background:#fff;border:1px solid #dfe8e2;border-radius:12px;padding:14px;margin-bottom:20px;color:#4b5563}
 .status strong{color:#064e3b}
 a{color:white;background:#16a34a;padding:10px 16px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:10px}
-.note{margin-top:22px;background:#fff;border:1px solid #dfe8e2;border-radius:12px;padding:15px;color:#5b6470;font-size:13px}
+.note{margin-top:22px;background:#fff;border:1px solid #dfe8e2;border-radius:12px;padding:15px;color:#5b6470;font-size:13px}.local-video{background:#fff;border:1px solid #dfe8e2;border-radius:16px;padding:18px;margin-bottom:24px;box-shadow:0 6px 20px #0000000a}.local-video h2{color:#064e3b;margin:0 0 6px}.local-video p{color:#5b6470}.local-video video{display:block;width:100%;max-height:680px;background:#111;border-radius:12px}.upload-help{background:#f0f7f2;border-radius:10px;padding:12px;color:#315b45;font-size:14px}
 footer{background:#022c22;color:white;text-align:center;padding:22px;margin-top:25px}
 @media(max-width:700px){.grid{grid-template-columns:1fr}}
 </style>
@@ -31,12 +31,14 @@ footer{background:#022c22;color:white;text-align:center;padding:22px;margin-top:
 <a href="/">Back to Ooty Cabz</a>
 </header>
 <main>
+<section class="local-video" aria-labelledby="own-video-heading"><h2 id="own-video-heading">Ooty Cabz Travel Video</h2><p>Watch our own video of Ooty Cabz taxi service and sightseeing experiences.</p><video id="ownVideo" controls playsinline preload="metadata" poster="/doddabetta-peak.jpg"><source src="/videos/ooty-cabz-video.mp4" type="video/mp4">Your browser does not support HTML video.</video><div id="videoUploadHelp" class="upload-help" hidden><strong>Your video is not uploaded yet.</strong> Once your MP4 file is added to the website repository at <code>videos/ooty-cabz-video.mp4</code>, it will play here automatically.</div></section>
 <div id="status" class="status"><strong>Loading latest Google Business Profile media…</strong></div>
 <div id="mediaGrid" class="grid"></div>
 <div class="note"><strong>How this works:</strong> Add new photos to your Ooty Cabz Google Business Profile and this website gallery will refresh the available media automatically. Google provides a preview image for Business Profile videos, so video items are shown as video preview cards rather than hosted as playable video files on this website.</div>
 </main>
 <footer>© 2026 Ooty Cabz Taxi Service • Ooty, The Nilgiris</footer>
 <script>
+(function(){const video=document.getElementById("ownVideo");const help=document.getElementById("videoUploadHelp");video.addEventListener("error",function(){video.hidden=true;help.hidden=false;});video.addEventListener("loadedmetadata",function(){video.hidden=false;help.hidden=true;});})();
 (async function(){
   const status=document.getElementById("status");
   const grid=document.getElementById("mediaGrid");
