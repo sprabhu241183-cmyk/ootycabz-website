@@ -1,0 +1,34 @@
+{
+  "id": "/",
+  "name": "Ooty Cabz Taxi Service",
+  "short_name": "Ooty Cabz",
+  "description": "Book Ooty sightseeing, airport transfers and Nilgiris taxi trips with Ooty Cabz.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "background_color": "#09271e",
+  "theme_color": "#09271e",
+  "orientation": "portrait-primary",
+  "categories": [
+    "travel",
+    "transportation"
+  ],
+  "icons": [
+    {
+      "src": "/icons/ootycabz-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/ootycabz-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
