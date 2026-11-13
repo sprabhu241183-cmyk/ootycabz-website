@@ -150,7 +150,54 @@ body{background:#0b0b0b;color:#f3f3ef}.top{background:#080808;border-bottom:1px 
 
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TaxiService","@id":"https://ootycabz.com/#taxi-service","name":"Ooty Cabz Taxi Service","url":"https://ootycabz.com/","image":"https://ootycabz.com/doddabetta-peak.jpg","telephone":"+919650847369","email":"info@ootycabz.com","contactPoint":{"@type":"ContactPoint","telephone":"+916379827467","contactType":"customer service","areaServed":"IN"},"areaServed":["Ooty","Coonoor","Kotagiri","Pykara","Mudumalai","Masinagudi","Coimbatore","Mettupalayam","Mysore","Kodaikanal"],"address":{"@type":"PostalAddress","streetAddress":"Ooty Main Bus Stand, Kathadimattam","addressLocality":"Ooty","addressRegion":"Tamil Nadu","postalCode":"643001","addressCountry":"IN"}}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://ootycabz.com/#localbusiness",
+      "name": "Ooty Cabz Taxi Service",
+      "url": "https://ootycabz.com/",
+      "image": "https://ootycabz.com/doddabetta-peak.jpg",
+      "telephone": "+919650847369",
+      "email": "info@ootycabz.com",
+      "foundingDate": "2014",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ooty Main Bus Stand, Kathadimattam",
+        "addressLocality": "Ooty",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "643001",
+        "addressCountry": "IN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+919650847369",
+          "contactType": "customer service",
+          "areaServed": "IN"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+916379827467",
+          "contactType": "customer service",
+          "areaServed": "IN"
+        }
+      ],
+      "areaServed": ["Ooty", "Coonoor", "Kotagiri", "Pykara", "Mudumalai", "Masinagudi", "Coimbatore", "Mettupalayam", "Mysore", "Kodaikanal"]
+    },
+    {
+      "@type": "TaxiService",
+      "@id": "https://ootycabz.com/#taxi-service",
+      "name": "Ooty Cabz Taxi Service",
+      "url": "https://ootycabz.com/",
+      "provider": {"@id": "https://ootycabz.com/#localbusiness"},
+      "telephone": "+919650847369",
+      "serviceType": ["Ooty sightseeing taxi", "Coonoor sightseeing taxi", "Pykara sightseeing taxi", "Airport transfers", "Railway station transfers"],
+      "areaServed": ["Ooty", "Coonoor", "Pykara", "Mudumalai", "Coimbatore", "Mettupalayam"]
+    }
+  ]
+}
 </script>
 
 <!-- Premium visual enhancement: keeps the existing content and SEO structure intact. -->
@@ -165,8 +212,8 @@ body{background:#0b0b0b;color:#f3f3ef}.top{background:#080808;border-bottom:1px 
 </head>
 <body>
 <div class="top">🚕 Ooty Cabz Taxi Service • Ooty Sightseeing • Coonoor • Pykara • Mudumalai • Airport & Railway Transfers</div>
-<nav class="nav"><div class="navin"><a class="brand" href="/">Ooty Cabz</a><div class="links"><a href="#services">Services</a><a href="#fleet">Fleet</a><a href="#routes">Routes</a><a href="/ooty-tour-packages/">Tour Packages</a><a href="#sightseeing-gallery">Photos</a><a href="#reviews">Reviews</a><a class="cta" href="https://ooty-cabz-taxi-service.ai.studio/" target="_blank" rel="noopener">Book Online</a></div></div></nav>
-<header class="hero"><div class="heroin"><span class="eyebrow">⭐ 5.0★ rated local Ooty taxi service</span><h1>Ooty Taxi Service for Sightseeing & Local Travel</h1><p>Local Ooty sightseeing, Coonoor & Kotagiri day trips, Pykara and Mudumalai tours, plus reliable Coimbatore and Mettupalayam transfers.</p><div class="buttons"><a class="btn gold" href="https://ooty-cabz-taxi-service.ai.studio/" target="_blank" rel="noopener">🚕 Book Your Taxi Online</a><a class="btn wa-gold" href="https://wa.me/919650847369?text=Hello%20Ooty%20Cabz%2C%20I%20need%20a%20taxi%20booking." target="_blank" rel="noopener">💬 Get Quote on WhatsApp</a><a class="btn call" href="tel:+919650847369">📞 Call +91 96508 47369</a></div>
+<nav class="nav"><div class="navin"><a class="brand" href="/">Ooty Cabz</a><div class="links"><a href="#services">Services</a><a href="#fleet">Fleet</a><a href="#routes">Routes</a><a href="/ooty-tour-packages/">Tour Packages</a><a href="#sightseeing-gallery">Photos</a><a href="#reviews">Reviews</a><a class="cta" href="#bookingPanel" id="navBookOnline">Book on WhatsApp</a></div></div></nav>
+<header class="hero"><div class="heroin"><span class="eyebrow">⭐ 5.0★ rated local Ooty taxi service</span><h1>Ooty Taxi Service for Sightseeing & Local Travel</h1><p>Local Ooty sightseeing, Coonoor & Kotagiri day trips, Pykara and Mudumalai tours, plus reliable Coimbatore and Mettupalayam transfers.</p><div class="buttons"><a class="btn gold" href="#bookingPanel" id="heroBookOnline">🚕 Get WhatsApp Quote</a><a class="btn wa-gold" href="https://wa.me/919650847369?text=Hello%20Ooty%20Cabz%2C%20I%20need%20a%20taxi%20booking." target="_blank" rel="noopener">💬 Get Quote on WhatsApp</a><a class="btn call" href="tel:+919650847369">📞 Call +91 96508 47369</a></div>
 <div class="quick"><div class="quick-title">Quick Booking</div><div class="quickgrid"><div class="quickitem"><small>PICKUP</small><strong id="pickupSummary">Ooty / Coimbatore / Mettupalayam</strong></div><div class="quickitem"><small>TRIP TYPE</small><strong id="tripSummary">Sightseeing / Transfer / Outstation</strong></div><div class="quickitem"><small>VEHICLE</small><strong id="vehicleSummary">Sedan / SUV / Tempo Traveller</strong></div><div class="quickitem"><small>DETAILS</small><strong id="detailsSummary">Date • Time • Passengers</strong></div></div><div class="pill-row"><span class="pill">Local drivers</span><span class="pill">Clear booking details</span><span class="pill">Direct WhatsApp</span></div><button class="btn gold" id="toggleBooking" type="button">Get Ooty Taxi Quote on WhatsApp</button><div class="formpanel" id="bookingPanel"><div class="field"><label for="pickup">Pickup</label><input id="pickup" placeholder="Ooty / Coimbatore Airport / Mettupalayam"></div><div class="field"><label for="destination">Destination / Tour</label><input id="destination" placeholder="Ooty Sightseeing / Coonoor / Airport Drop"></div><div class="field"><label for="date">Date</label><input id="date" type="date"></div><div class="field"><label for="time">Time</label><input id="time" type="time"></div><div class="field"><label for="passengers">Passengers</label><input id="passengers" type="number" min="1" placeholder="4"></div><div class="field"><label for="vehicle">Vehicle</label><select id="vehicle"><option>Sedan</option><option>SUV / Innova / Ertiga</option><option>Tempo Traveller</option><option>Not sure – suggest one</option></select></div><div class="field formfull"><label for="luggage">Luggage</label><input id="luggage" placeholder="Example: 2 bags"></div><div class="formfull"><button class="btn gold" id="sendQuote" type="button" style="width:100%">💬 Send Trip Details on WhatsApp</button><div class="estimate-note">Share your trip details and we will suggest a suitable vehicle and fare.</div></div></div></div></div></header>
 <main>
 <section class="trust"><div class="wrap"><div class="trustgrid"><div class="trustcard"><div class="icon">⭐</div><strong>5.0★ Rated</strong><span>Trusted by travellers</span></div><div class="trustcard"><div class="icon">📍</div><strong>Ooty Based</strong><span>Local Nilgiris route knowledge</span></div><div class="trustcard"><div class="icon">🧾</div><strong>Clear Quotes</strong><span>No hidden charges</span></div><div class="trustcard"><div class="icon">💬</div><strong>Easy Booking</strong><span>Direct WhatsApp support</span></div></div></div></section>
@@ -200,7 +247,7 @@ body{background:#0b0b0b;color:#f3f3ef}.top{background:#080808;border-bottom:1px 
 </div></div></section>
 <section class="section soft"><div class="wrap"><div class="head"><div class="label">Why choose us</div><h2 class="title">A Simple, Reliable Way to Travel in Ooty</h2></div><div class="grid"><div class="card"><div class="icon">🏔️</div><h3>Local Hill-Road Knowledge</h3><p>Our service is based in Ooty, with practical knowledge of Nilgiris sightseeing and mountain routes.</p></div><div class="card"><div class="icon">🧾</div><h3>Clear Booking Details</h3><p>We explain the vehicle, route and applicable charges before confirming your trip.</p></div><div class="card"><div class="icon">📸</div><h3>Flexible Sightseeing</h3><p>Ask us about a practical route based on your available time and the places you want to visit.</p></div></div></div></section>
 <section class="section" id="reviews"><div class="wrap"><div class="head"><div class="label">Google reviews</div><h2 class="title">What Our Customers Say</h2><p class="sub">Real 5-star Google reviews from travellers who chose Ooty Cabz Taxi Service.</p><p class="sub"><strong>⭐ 5.0★ rating • 56 Google reviews</strong></p></div><div class="reviewgrid"><div class="review"><div class="stars">★★★★★</div><h3>Dimple Vasvani</h3><p>“Mr Prabhu is an exceptional driver who drives very patiently in the valley and explained in details. I wanted to travel through toy train.. and he made sure that I did.. very nice person.”</p><small>Google review • 3 weeks ago</small></div><div class="review"><div class="stars">★★★★★</div><h3>Ruban Ranjous</h3><p>“We had an excellent experience with Ooty Cabz Taxi Service. Mr. Prabhu was very professional, punctual, and friendly throughout our trip. The car was clean and comfortable, and the driving was safe on the Ooty hill roads.”</p><small>Google review • 1 month ago</small></div><div class="review"><div class="stars">★★★★★</div><h3>Anand Lakhmani</h3><p>“Our experience with Mr. Prabhu was excellent. He is extremely polite, always smiling, and very well-versed with all the local attractions and hidden gems around Ooty.”</p><small>Google review • 2 months ago</small></div><div class="review"><div class="stars">★★★★★</div><h3>Neeta Singh</h3><p>“Very good service, decent behaviour, very good Hindi spoken, punctual in time.”</p><small>Google review • New</small></div></div><div style="text-align:center;margin-top:24px"><a class="btn gold" href="https://maps.app.goo.gl/CPDzhmiV6NYrobVJ7" target="_blank" rel="noopener">⭐ View All Google Reviews</a></div></div></section>
-<section class="section"><div class="wrap"><div class="bookbox"><h2>🚕 Ready to Book Your Ooty Taxi?</h2><p>Send your pickup, drop, date, time, passengers, luggage and preferred vehicle. We will suggest the suitable option and share the fare.</p><div class="buttons" style="justify-content:center"><a class="btn gold" href="https://ooty-cabz-taxi-service.ai.studio/" target="_blank" rel="noopener">🚕 Book Your Taxi Online</a><a class="btn wa-gold" href="https://wa.me/919650847369?text=Hello%20Ooty%20Cabz%2C%20I%20want%20to%20book%20a%20taxi.%0A%0APickup:%0ADrop:%0ADate:%0ATime:%0APassengers:%0ALuggage:%0AVehicle:" target="_blank" rel="noopener">💬 WhatsApp Booking</a><a class="btn call" href="tel:+919650847369">📞 +91 96508 47369</a></div></div></div></section>
+<section class="section"><div class="wrap"><div class="bookbox"><h2>🚕 Ready to Book Your Ooty Taxi?</h2><p>Send your pickup, drop, date, time, passengers, luggage and preferred vehicle. We will suggest the suitable option and share the fare.</p><div class="buttons" style="justify-content:center"><a class="btn gold" href="#bookingPanel" id="footerBookOnline">🚕 Get WhatsApp Quote</a><a class="btn wa-gold" href="https://wa.me/919650847369?text=Hello%20Ooty%20Cabz%2C%20I%20want%20to%20book%20a%20taxi.%0A%0APickup:%0ADrop:%0ADate:%0ATime:%0APassengers:%0ALuggage:%0AVehicle:" target="_blank" rel="noopener">💬 WhatsApp Booking</a><a class="btn call" href="tel:+919650847369">📞 +91 96508 47369</a></div></div></div></section>
 </main>
 <footer class="footer"><div class="footin"><div><h3>Ooty Cabz Taxi Service</h3><p>Private Ooty taxi service for sightseeing, airport transfers, Mettupalayam railway station pickups and Nilgiris travel.</p><p><a href="https://ootycabz.com/">ootycabz.com</a></p></div><div><h3>Popular Pages</h3><p><a href="/ooty-sightseeing-taxi/">Ooty Sightseeing</a></p><p><a href="/coonoor-sightseeing-taxi/">Coonoor Sightseeing</a></p><p><a href="/pykara-sightseeing-taxi/">Pykara Sightseeing</a></p><p><a href="/mudumalai-sightseeing-taxi/">Mudumalai Taxi</a></p><p><a href="/ooty-taxi-fare-2026/">Taxi Booking & Quote Guide</a></p><p><a href="/ooty-tour-packages/">Ooty Tour Packages</a></p></div><div><h3>Contact</h3><p>📞 <a href="tel:+919650847369">+91 96508 47369</a></p><p>📞 <a href="tel:+916379827467">+91 63798 27467</a></p><p>✉️ <a href="mailto:info@ootycabz.com">info@ootycabz.com</a></p><p>Ooty Main Bus Stand, Kathadimattam, Ooty, The Nilgiris, Tamil Nadu - 643001</p></div></div><div class="copy">© 2026 Ooty Cabz Taxi Service. All Rights Reserved.</div></footer>
 <button id="pwaInstall" type="button" hidden>＋ Install Ooty Cabz</button><section id="pwaHelp" role="dialog" aria-label="Install Ooty Cabz" hidden><button id="pwaHelpClose" type="button" aria-label="Close">✕</button><strong>Install Ooty Cabz</strong><p data-install-steps>Follow your browser instructions to add Ooty Cabz to your home screen.</p></section>
@@ -218,6 +265,7 @@ body{background:#0b0b0b;color:#f3f3ef}.top{background:#080808;border-bottom:1px 
  fields.date.min=localToday;
  function openPanel(){panel.classList.add('show');toggle.textContent='Booking Details';panel.scrollIntoView({behavior:'smooth',block:'nearest'});}
  toggle.addEventListener('click',openPanel);
+ ['navBookOnline','heroBookOnline','footerBookOnline'].forEach(function(id){const link=document.getElementById(id);if(link){link.addEventListener('click',function(e){e.preventDefault();openPanel();});}});
  document.getElementById('mobileBook').addEventListener('click',function(e){e.preventDefault();openPanel();});
  send.addEventListener('click',function(){
    const pickup=fields.pickup.value.trim(),destination=fields.destination.value.trim(),date=fields.date.value,time=fields.time.value,passengers=fields.passengers.value.trim(),vehicle=fields.vehicle.value,luggage=fields.luggage.value.trim();
