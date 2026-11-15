@@ -162,6 +162,66 @@ body{background:#0b0b0b;color:#f3f3ef}.top{background:#080808;border-bottom:1px 
 #pwaInstall{position:fixed;left:14px;bottom:86px;z-index:75;border:1px solid #e6bd55;border-radius:999px;padding:12px 16px;background:#09271e;color:#fff;font:800 13px system-ui;box-shadow:0 8px 24px #0003;cursor:pointer}#pwaInstall[hidden],#pwaHelp[hidden]{display:none}#pwaHelp{position:fixed;left:14px;right:14px;bottom:158px;z-index:80;max-width:440px;margin:auto;padding:18px;background:#fff;color:#17231e;border:2px solid #c79a32;border-radius:16px;box-shadow:0 12px 40px #0004}#pwaHelp strong{color:#09271e}#pwaHelp button{float:right;border:0;background:#09271e;color:#fff;border-radius:8px;padding:7px 10px}
 @media(min-width:601px){#pwaInstall{bottom:22px}#pwaHelp{bottom:82px;left:22px;right:auto}}
 </style>
+
+<!-- Ooty Cabz orange theme refresh: visual-only overrides; existing layout and booking scripts are unchanged. -->
+<style id="ootycabz-orange-theme">
+:root{
+  --bg-main:#fffaf5;--bg-card:#ffffff;--bg-dark:#171717;
+  --green:#f97316;--green-dark:#2b211b;
+  --text-primary:#29231f;--text-secondary:#6b625c;
+  --gold:#f97316;--gold-soft:#ea580c;
+  --border:#f1dfd1;--shadow:0 14px 34px rgba(77,42,19,.09);
+}
+body{background:var(--bg-main);color:var(--text-primary)}
+.top{background:#171717;color:#fff7ed;border-bottom:2px solid #f97316}
+.nav{background:rgba(255,255,255,.96);border-bottom:1px solid #f1dfd1}
+.brand,.links a:not(.cta){color:#2b211b}
+.brand:before{filter:none}
+.links a:not(.cta):hover,.link,.label{color:#ea580c}
+.cta,.gold,.wa-gold,.btn-primary{
+  background:linear-gradient(135deg,#fb923c,#ea580c);
+  color:#fff!important;box-shadow:0 7px 18px rgba(234,88,12,.2)
+}
+.hero{
+  background-image:linear-gradient(90deg,rgba(24,18,14,.9),rgba(45,27,16,.68),rgba(45,27,16,.22)),url('/doddabetta-peak.jpg');
+}
+.eyebrow{background:rgba(35,24,17,.72);border-color:#fb923c;color:#fff7ed}
+.quick{background:#fff;color:#29231f;border-color:#f1dfd1;border-top-color:#f97316}
+.quick-title,.title,.card h3,.fleet h3,.place h3,.review h3{color:#39271c}
+.quickitem{background:#fffaf5;border-color:#f1dfd1;color:#29231f}
+.quickitem small,.field label{color:#74665c}
+.field input,.field select{background:#fff;color:#29231f;border-color:#ead8ca}
+.field input:focus,.field select:focus{border-color:#f97316;box-shadow:0 0 0 3px rgba(249,115,22,.13)}
+.section.soft,.soft{background:#fff3e8;border-color:#f4dfcf}
+.trustcard,.card,.fleet,.route,.place,.review,.gallerycard{
+  background:#fff;border-color:#f1dfd1;box-shadow:0 12px 30px rgba(77,42,19,.07)
+}
+.trustcard:hover,.card:hover,.fleet:hover,.gallerycard:hover,.review:hover{
+  border-color:#fdba74;box-shadow:0 18px 38px rgba(77,42,19,.12)
+}
+.trustcard strong{color:#39271c}
+.card .icon,.fleet .fleeticon{background:#fff0e3;color:#ea580c}
+.fleet .tag,.pill{background:#fff3e8;border-color:#fed7aa;color:#9a3412}
+.route{background:#fff;color:#39271c;border-left-color:#f97316}
+.route:hover{background:#fff7ed;border-color:#ea580c}
+.gallerynote{background:#fff7ed;border-color:#f1dfd1;color:#6b625c}
+.bookbox{
+  background:radial-gradient(circle at top right,rgba(249,115,22,.22),transparent 38%),linear-gradient(135deg,#25180f,#633014);
+  border-color:#fb923c
+}
+.bookbox h2{color:#fff7ed}.bookbox p{color:#fff}
+.footer{background:#171717;border-top:3px solid #f97316;color:#eee7e1}
+.footer h3{color:#fff}.footer a{color:#ffe1cc}
+.bottomnav{background:rgba(255,255,255,.98);border-top-color:#ead8ca}
+.bottomnav a{color:#39271c}.bottomnav a:nth-child(4){color:#ea580c}
+.float{background:#25d366;color:#082315}
+.stars{color:#ea580c}.gallerybody h3{color:#39271c}
+.gallerybody .credit a{color:#ea580c}
+@media(max-width:600px){
+  .bottomnav{background:rgba(255,255,255,.98)}
+  .hero{background-position:58% center}
+}
+</style>
 </head>
 <body>
 <div class="top">🚕 Ooty Cabz Taxi Service • Ooty Sightseeing • Coonoor • Pykara • Mudumalai • Airport & Railway Transfers</div>
