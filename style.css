@@ -33,3 +33,24 @@ body.subpage img{max-width:100%;height:auto}
 @media(prefers-reduced-motion:reduce){
   body.subpage *,body.subpage *::before,body.subpage *::after{transition:none!important;animation:none!important}
 }
+
+
+/* Ooty Cabz premium dark charcoal + orange theme */
+:root{color-scheme:dark;--oc-ink:#F5F7FA;--oc-green:#F07818;--oc-leaf:#FF9A3D;--oc-gold:#F07818;--oc-paper:#0B1018;--oc-line:#303C4B;--oc-muted:#D0D6DE;--oc-shadow:0 14px 36px rgba(0,0,0,.28)}
+body.subpage{background:#0B1018!important;color:#F5F7FA!important}
+body.subpage header{background:linear-gradient(135deg,#080D14,#172333)!important;border-bottom:3px solid #F07818!important}
+body.subpage header p{color:#DCE2E9!important}
+body.subpage main>section,body.subpage main>.card,body.subpage main>article{background:#151E2A!important;border-color:#303C4B!important;box-shadow:var(--oc-shadow)!important;color:#F5F7FA!important}
+body.subpage h1,body.subpage h2,body.subpage h3{color:#FFFFFF!important}
+body.subpage p,body.subpage li{color:#D0D6DE!important}
+body.subpage a{color:#FF9A3D!important}
+body.subpage a:hover{color:#FFC18B!important}
+body.subpage a.button,body.subpage button,body.subpage .btn{background:linear-gradient(135deg,#FF922E,#E8660B)!important;color:#FFFFFF!important;border-color:#F07818!important}
+body.subpage input,body.subpage select,body.subpage textarea{background:#0E1621!important;border-color:#3A4656!important;color:#FFFFFF!important}
+body.subpage input::placeholder,body.subpage textarea::placeholder{color:#AEB8C4!important}
+body.subpage input:focus,body.subpage select:focus,body.subpage textarea:focus{outline:3px solid rgba(240,120,24,.22)!important;border-color:#F07818!important}
+body.subpage footer{background:#070C13!important;border-top:3px solid #F07818!important;color:#DCE2E9!important}
+body.subpage footer a{color:#FFB16F!important}
+body.subpage th{background:#202B39!important;color:#FFFFFF!important}
+:focus-visible{outline:3px solid #FF9A3D!important;outline-offset:3px!important}
+@media(prefers-reduced-motion:reduce){body.subpage *,body.subpage *::before,body.subpage *::after{transition:none!important;animation:none!important}}
