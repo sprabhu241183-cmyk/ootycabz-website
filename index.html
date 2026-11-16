@@ -258,6 +258,41 @@ body{background:#F7F4EA!important;color:#26332D!important}
 .stars{color:#A9853F!important}.gallerybody h3{color:#173D32!important}.gallerybody .credit a{color:#24634D!important}
 #pwaInstall{background:#173D32!important;border-color:#C6A45A!important;color:#FFF!important}#pwaHelp{border-color:#C6A45A!important}#pwaHelp strong{color:#173D32!important}#pwaHelp button{background:#173D32!important}
 @media(max-width:600px){.bottomnav{background:rgba(255,255,255,.98)!important}.hero{background-position:58% center}}
+
+/* Safe premium design polish — presentation only; booking and SEO markup unchanged */
+:focus-visible{outline:3px solid #C6A45A!important;outline-offset:3px!important}
+html{scroll-behavior:smooth}
+.hero h1{max-width:820px;text-wrap:balance;letter-spacing:-.045em}
+.hero p{line-height:1.75}
+.section{scroll-margin-top:92px}
+.head{max-width:850px}
+.sub{line-height:1.8}
+.trustcard,.card,.fleet,.route,.review,.gallerycard{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.trustcard:hover,.card:hover,.fleet:hover,.review:hover,.gallerycard:hover{transform:translateY(-3px)}
+.card,.fleet,.review{height:100%}
+.quick{backdrop-filter:blur(8px)}
+.quickitem{min-height:72px;display:flex;flex-direction:column;justify-content:center;gap:3px}
+.quickitem strong{overflow-wrap:anywhere}
+.buttons .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+.route{min-height:64px;gap:12px}
+.footer{line-height:1.75}
+@media(max-width:850px){
+  .hero{min-height:0}
+  .heroin{padding-top:58px;padding-bottom:60px}
+  .links{gap:10px}
+}
+@media(max-width:600px){
+  .hero h1{max-width:100%;font-size:clamp(35px,9.5vw,44px)}
+  .hero p{font-size:16px}
+  .section{scroll-margin-top:78px}
+  .quickitem{min-height:64px}
+  .route{min-height:58px}
+  .buttons .btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
+
 </style>
 
 </head>
