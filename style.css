@@ -14,3 +14,22 @@ body.subpage input:focus,body.subpage select:focus,body.subpage textarea:focus{o
 body.subpage footer{background:#102D24!important;border-top:3px solid var(--oc-gold)!important;color:#E8EDE7!important}
 body.subpage footer a{color:#E7D6A8!important}
 body.subpage th{background:#EEF2E9!important;color:var(--oc-green)!important}
+
+/* Consistent premium polish for all service and route subpages */
+:focus-visible{outline:3px solid var(--oc-gold)!important;outline-offset:3px!important}
+body.subpage{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;letter-spacing:-.01em}
+body.subpage main{max-width:1180px;margin-inline:auto;padding-inline:18px}
+body.subpage main>section,body.subpage main>.card,body.subpage main>article{border-radius:18px}
+body.subpage h1,body.subpage h2,body.subpage h3{letter-spacing:-.035em;line-height:1.2}
+body.subpage p,body.subpage li{line-height:1.75}
+body.subpage a.button,body.subpage button,body.subpage .btn{border-radius:11px;min-height:46px;transition:transform .2s ease,box-shadow .2s ease}
+body.subpage a.button:hover,body.subpage button:hover,body.subpage .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(23,61,50,.14)}
+body.subpage input,body.subpage select,body.subpage textarea{min-height:46px;border-radius:10px}
+body.subpage img{max-width:100%;height:auto}
+@media(max-width:700px){
+  body.subpage main{padding-inline:14px}
+  body.subpage main>section,body.subpage main>.card,body.subpage main>article{border-radius:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  body.subpage *,body.subpage *::before,body.subpage *::after{transition:none!important;animation:none!important}
+}
