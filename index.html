@@ -430,7 +430,7 @@ body{background:#0B1018!important;color:#F5F7FA!important}
  send.addEventListener('click',function(){
    const name=fields.name.value.trim(),phone=fields.phone.value.trim(),pickup=fields.pickup.value.trim(),destination=fields.destination.value.trim(),date=fields.date.value,time=fields.time.value,passengers=fields.passengers.value.trim(),vehicle=fields.vehicle.value,luggage=fields.luggage.value.trim();
    if(!name||!phone||!pickup||!destination||!date||!time||!passengers||!vehicle){alert('Please complete your name, mobile number and all required trip details.');return;}
-   const phoneDigits=phone.replace(/\\D/g,'');
+   const phoneDigits=phone.replace(/\D/g,'');
    if(phoneDigits.length<8||phoneDigits.length>15){alert('Please enter a valid mobile / WhatsApp number with country code.');fields.phone.focus();return;}
    if(date<localToday){alert('Please choose today or a future travel date.');fields.date.focus();return;}
    const passengerCount=Number(passengers);
