@@ -42,16 +42,42 @@ footer{background:#022c22;color:white;text-align:center;padding:22px;margin-top:
 (async function(){
   const status=document.getElementById("status");
   const grid=document.getElementById("mediaGrid");
+  const localItems=[
+    ["doddabetta-peak.jpg","Doddabetta Peak, Ooty"],
+    ["botanical-garden.jpg","Government Botanical Garden, Ooty"],
+    ["rose-garden.jpg","Government Rose Garden, Ooty"],
+    ["ooty-lake-boat-house.jpg","Ooty Lake and Boat House"],
+    ["pykara-lake.jpg","Pykara Lake"],
+    ["pykara-waterfalls.jpg","Pykara Waterfalls"],
+    ["pine-forest.jpg","Pine Tree Forest, Ooty"],
+    ["wenlock-downs.jpg","Wenlock Downs, Ooty"],
+    ["coonoor-view-point.jpg","Coonoor View Point"],
+    ["nilgiri-toy-train.jpg","Nilgiri Mountain Railway"],
+    ["avalanche-lake-road.jpg","Avalanche Lake Road"],
+    ["mudumalai-wildlife-sanctuary.jpg","Mudumalai Wildlife Sanctuary"],
+    ["IMG-20261010-WA0001.jpg","Ooty Cabz trip photo"],
+    ["IMG-20261010-WA0004.jpg","Ooty Cabz trip photo"],
+    ["IMG-20261010-WA0009.jpg","Ooty Cabz trip photo"],
+    ["IMG-20261010-WA0011.jpg","Ooty Cabz trip photo"],
+    ["IMG-20261010-WA0012.jpg","Ooty Cabz trip photo"],
+    ["IMG-20261010-WA0017.jpg","Ooty Cabz trip photo"],
+    ["IMG-20261013-WA0019.jpg","Ooty Cabz trip photo"]
+  ];
+  function showLocalGallery(){
+    status.innerHTML="<strong>Ooty Cabz photo gallery</strong> • Showing photos hosted on our website.";
+    grid.innerHTML=localItems.map(([src,title])=>'<figure><div class="media"><img src="/'+escapeHtml(src)+'" alt="'+escapeHtml(title)+'" loading="lazy"></div><figcaption>'+escapeHtml(title)+'</figcaption></figure>').join("");
+  }
+  showLocalGallery();
   try{
     const res=await fetch("/api/google-media",{headers:{accept:"application/json"}});
     const data=await res.json();
     if(!data.ok){
-      status.innerHTML="<strong>Google Business Profile media is not connected yet.</strong> The website is ready; the Google OAuth details still need to be added securely in Cloudflare.";
+      showLocalGallery();
       return;
     }
     const items=(data.items||[]).filter(x=>x.imageUrl);
     if(!items.length){
-      status.innerHTML="<strong>No Google Business Profile media was returned.</strong> Add photos/videos to your profile and refresh this page.";
+      showLocalGallery();
       return;
     }
     status.innerHTML="<strong>Latest Google Business Profile media</strong> • Updated automatically";
@@ -63,7 +89,7 @@ footer{background:#022c22;color:white;text-align:center;padding:22px;margin-top:
       return '<figure><div class="media"><img src="'+escapeHtml(item.imageUrl)+'" alt="'+escapeHtml(title)+'" loading="lazy">'+(isVideo?'<span class="video-badge">▶ Video on Google</span>':'')+'</div><figcaption>'+escapeHtml(title)+'</figcaption><div class="meta">'+escapeHtml(date)+' '+source+'</div></figure>';
     }).join("");
   }catch(e){
-    status.innerHTML="<strong>Media could not be loaded right now.</strong> Please try again later.";
+    showLocalGallery();
   }
 })();
 function escapeHtml(value){
