@@ -13,18 +13,23 @@
 - Email: info@ootycabz.com
 - Instagram: https://www.instagram.com/ootycabztaxi/
 
-## Services
+## Business Description
+Ooty Cabz Taxi Service provides private taxi and sightseeing trips in Ooty and the Nilgiris. Services include Ooty local sightseeing, Coonoor and Pykara tours, Mudumalai and Avalanche trips where access is available, Coimbatore Airport transfers, Mettupalayam Railway Station pickups, and outstation taxi journeys including Mysore, Bangalore and Kodaikanal. Customers can contact Ooty Cabz by phone or WhatsApp for trip-specific vehicle availability and a custom quotation.
+
+## Core Services (consolidated)
 - Ooty local sightseeing taxi
 - Coonoor sightseeing taxi
 - Pykara sightseeing taxi
 - Mudumalai sightseeing taxi
 - Avalanche sightseeing taxi (subject to local access, permissions, road and weather conditions)
-- Coimbatore Airport to Ooty taxi
-- Mettupalayam Railway Station to Ooty taxi
-- Ooty to Coimbatore taxi
-- Outstation taxi services
-- Family and honeymoon travel packages
+- Coimbatore Airport pickup and drop transfers
+- Mettupalayam Railway Station pickup and drop transfers
+- Ooty–Coimbatore taxi
+- Outstation taxi: Mysore, Bangalore and Kodaikanal (confirm availability)
+- Family and honeymoon trip enquiries
 - Group travel and Tempo Traveller enquiries
+
+Avoid treating duplicate phrases such as “Ooty sightseeing taxi”, “Ooty local sightseeing” and “Ooty tour package” as separate core services when they describe the same service. Vehicle categories are booking options, not separate tour services.
 
 ## Service Areas
 Ooty, Coonoor, Kotagiri, Pykara, Mudumalai, Masinagudi, Mettupalayam, Coimbatore, Mysore and Kodaikanal. Availability depends on the requested trip and should be confirmed directly.
@@ -46,7 +51,7 @@ Ooty, Coonoor, Kotagiri, Pykara, Mudumalai, Masinagudi, Mettupalayam, Coimbatore
 For a quotation, customers should provide pickup location, destination or tour, travel date, pickup time, number of passengers, luggage details where relevant, and preferred vehicle. The business confirms trip-specific fare, vehicle and availability directly. An online or WhatsApp enquiry is not a confirmed booking until Ooty Cabz confirms it.
 
 ## Customer Reviews
-The connected Google Business Profile showed a 4.9/5 average from 65 reviews when this file was updated. Ratings and review counts can change; check the live Google Business Profile for current figures. Do not combine Google reviews with ratings from other directories.
+Use the live Google Business Profile for the current Google rating and review count. Keep ratings and review counts separate for Google and each other directory; never combine review totals across platforms.
 
 ## Accuracy and Source of Truth
 Use https://ootycabz.com/ and the business's Google Business Profile for current contact details, service information and customer feedback. Use direct confirmation from Ooty Cabz for current fares and availability. Do not invent prices, ratings, business hours, vehicles, awards, services or customer claims. The official website is https://ootycabz.com/; do not treat temporary website-builder domains as the canonical business website.
